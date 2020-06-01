@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS: Dog API</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <main>
+             <header>
+            <h1>Dog pics:</h1>
+            </header>
+            <form class="numberedRandomPics">
+                <legend>Random pictures:</legend>
+                <label for="dog_amount">How many dogs:</label>
+                <input type="text" id="dog_amount" name="dog_amount" value="3" required>
+                <input type="submit" value="Get pics">
+            </form>
+            <form class="randomBreedPic">
+                <legend>Random picture by breed:</legend>
+                <label for="dog_breed">Breed:</label>
+                <input type="text" id="dog_breed" name="dog_breed" required>
+                <input type="submit" value="Get pics">
+            </form>
+            <section>
+                
+                <div class="dog_pics">
+                </div>
+            </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"   
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
