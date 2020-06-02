@@ -1,10 +1,9 @@
-
 function getDogImage(dog_amount) {
     fetch(`https://dog.ceo/api/breeds/image/random/${dog_amount}`)
       .then(response => response.json())
       .then(responseJson => generateImgHTML(responseJson, dog_amount));
       //.then(responseJson => generateImgHTML(responseJson));
-      
+      abc = 'max';
       //generateImgHTML();
 
   }
@@ -43,16 +42,16 @@ function watchForm() {
     });
   } 
   function getDogImageByBreed(dog_breed) {
-    fetch(`https://dog.ceo/api/breed/${dog_breed}/images/`)
+    fetch(`https://dog.ceo/api/breed/${dog_breed}/images/random`)
       .then(response => response.json())
-      .then(responceJson => console.log(responceJson))
-      .then(responseJson=> generateImgHTMLifRandom(responseJson, dog_breed));
+      .then(responceJson=> generateImgHTMLifRandom(responceJson, dog_breed))
+      .catch(error => alert('Something went wrong. Try again later.'));
     }
-    function generateImgHTMLifRandom (responceJson, forminput) {
+    function generateImgHTMLifRandom (responceJson, dog_breed) {
       $(".dog_pics").replaceWith(`<div class="dog_pics">
-      <h2>'Look at this ${dog_breed}!'</h2>
+      <h2>Look at this ${dog_breed}!</h2>
       </div>`);  
-      
+      console.log(`${responceJson}`+'consoleteset');
       $("div.dog_pics").append(`<img src="${responceJson.message}" alt="dog pic">`);
         
         console.log('generate breed ran');
