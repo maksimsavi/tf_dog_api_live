@@ -20,11 +20,13 @@ function decideSubhead (dog_amount) {
   }
 }
 function generateImgHTML (responceJson, forminput) {
+  
   $(".dog_pics").replaceWith(`<div class="dog_pics">
   <h2>${decideSubhead(forminput)}</h2>
   </div>`);  
   responceJson.message.forEach(element => {
-    $("div.dog_pics").append(`<img src="${element}" alt="dog pic">`);    
+    $("div.dog_pics").append(`<img src="${element}" alt="dog pic">`);
+    console.log(element)    
     });
     
     console.log('generate ran');
